@@ -1,10 +1,10 @@
 import Link from "next/link";
+import AboutContent from "../ui/AboutContent";
 
 export default function AboutPage() {
   return (
     <div>
-       <Link href="./"><h1>HOME</h1></Link>
-      <h1 className="header">Hello PageAbout</h1>
+       <AboutContent/>
     </div>
   );
 }
