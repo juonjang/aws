@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { NewsType } from "@prisma/client";
+import { NewsType, Prisma } from "@prisma/client";
 
 export async function findAllNewsType(): Promise<NewsType[]> {
     return await prisma.newsType.findMany({
@@ -13,8 +13,20 @@ export async function findOneNewsType(id:number): Promise<NewsType| null> {
     })
 }
 
-export async function createNewsType(data:Promise<NewsType[]>){}
+export async function createNewsType(data:Prisma.NewsTypeCreateInput):Promise<NewsType>{
+    return await prisma.newsType.create({
+        data:{title:data.title}
+    })
+}
+export async function updateNewsType(id:number,data:Prisma.NewsTypeUpdateInput){
+    return await prisma.newsType.update({
+        where:{id:id},
+        data:data
+    })
+}
 
-export async function updateNewsType(data:any,id:number){}
-
-export async function removeNewsType(id:number){}
+export async function removeNewsType(id:number){
+    return await prisma.newsType.delete({
+        where : {id:id},
+    })
+}
