@@ -1,0 +1,17 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model NewsType{
+  id Int @id @default(autoincrement()) 
+  title String @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+
+  @@map("news_type")
+}

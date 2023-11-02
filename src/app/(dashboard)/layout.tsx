@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Kanit } from 'next/font/google'
 import '../globals.css'
+import Providers from '@/components/Providers'
+import DLayout from "./components/DLayout"
 
 const kanit = Kanit({ weight:['100','200','300','400','500','600','700'],subsets: ['latin']})
 
@@ -16,10 +18,11 @@ export default function DashboardLayout({
 }) {
   return (
     <html lang="en">
-      <body className={kanit.className}>
-        <h1>Dashboard-header</h1> <hr />
-        {children} <hr />
-        <h4>Dashboard-footer</h4>
+      <body>
+      <Providers>
+        <DLayout>{children} </DLayout>
+      
+      </Providers>
         </body>
     </html>
   )

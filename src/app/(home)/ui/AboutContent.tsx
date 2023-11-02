@@ -4,12 +4,13 @@
 import { Container,Title,Divider,Text,Space} from "@mantine/core";
 
 
-export default function AboutContent() {
+export default function AboutContent({data}:any) {
   return (
     <Container size={'lg'}>
         <Title order={4}>About</Title>
         <Divider size={2}/>
-        <Text fz={'sm'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, maiores enim tempora aperiam eius repellendus ratione iusto nulla maxime veritatis. Asperiores perspiciatis nam nobis et quasi repellendus dolorum doloribus assumenda.
+        <Text fz={'sm'}>
+            { JSON.stringify(data) }
         </Text>
         <Space h={"md"}/>
     </Container>
