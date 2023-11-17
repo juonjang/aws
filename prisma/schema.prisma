@@ -15,3 +15,12 @@ model NewsType{
 
   @@map("news_type")
 }
+model User{
+  id Int @id @default(autoincrement()) 
+  fullname String @db.VarChar(255)
+  loginname String @db.VarChar(255) @unique
+  password String @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+
+  @@map("users")
+}

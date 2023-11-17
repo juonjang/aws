@@ -148,11 +148,20 @@ import Link from 'next/link';
                         </div>
                         </HoverCard.Dropdown>
                     </HoverCard> */}
-                    <Link href="../dashboard" className={pathname == "/dashboard" ? classes.active:classes.link}>
+                    <Link
+                      prefetch={false}
+                     href="../dashboard" className={pathname == "/dashboard" ? classes.active:classes.link}>
                         <h3>Dashboard</h3>
                     </Link>
-                    <Link href="../about" className={pathname == "/about" ? classes.active:classes.link}>
-                        <h3>about</h3>
+                    <Link
+                    prefetch={false}
+                     href="../about" className={pathname == "/about" ? classes.active:classes.link}>
+                        <h3>About</h3>
+                    </Link>
+                    <Link 
+                    prefetch={false}
+                    href="../newsType" className={pathname == "/newsType" ? classes.active:classes.link}>
+                        <h3>NewsType</h3>
                     </Link>
                     </Group>
         

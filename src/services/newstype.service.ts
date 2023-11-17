@@ -7,6 +7,9 @@ export async function findAllNewsType(): Promise<NewsType[]> {
     } );//select * from newsType
 }
 
+
+
+
 export async function findOneNewsType(id:number): Promise<NewsType| null> {
     return await prisma.newsType.findUnique({
         where :{id:id}
